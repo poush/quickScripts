@@ -1,7 +1,7 @@
 # README:
 # 0th column is assumed to have image path
 # 3rd column is assumed to have class name
-# 4,5,6,8 th columns are assumed to have x1,y1,x2,y2 of the image
+# 4,5,6,8 th columns are assumed to have x1,y1,x2,y2 of the object in the image
 # it creates a folder called "anno" and store new annotation files there
 # feel free to update indexes as present in your annotation file
 
