@@ -1,5 +1,5 @@
 # README:
-# 1st column is assumed to have image path
+# 0th column is assumed to have image path
 # 3rd column is assumed to have class name
 # 4,5,6,8 th columns are assumed to have x1,y1,x2,y2 of the image
 # it creates a folder called "anno" and store new annotation files there
