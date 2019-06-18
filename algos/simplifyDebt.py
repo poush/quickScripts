@@ -56,4 +56,5 @@ def simplifyDebts(transactions):
         people_dept = sorted(people_dept, key=lambda k: k[1])
 
 
-simplifyDebts(transactions)
+if __name__ == "__main__":
+    simplifyDebts(transactions)
