@@ -7,7 +7,20 @@ transactions = [
     [1,0 ,100],
     [1,2 ,200],
     [2,0 ,550],
-    [2,1 ,200],
+    [2,1 ,200]
+]
+
+transactions = [
+    [4,2 ,40],
+    [3,2 ,30],
+    [2,2 ,20],
+    [6,7 ,320],
+    [4,7 ,40],
+    [2,7 ,40],
+    [8,1 ,100],
+    [7,1 ,100],
+    [4,1 ,100],
+    [1, 4, 200]
 ]
 ts = transactions
 
@@ -30,9 +43,9 @@ def simplifyDebt(ts):
         cut = False
         # ts = ts2
         for i in range(0, len(ts)):
-            # print(i, ts[i])
             if ts[i][0] == ts[i][1]:
                 ts = ts[:i] + ts[i+1:]
+                # print("eehhaa", ts)
                 cut = True
                 break
 
@@ -41,6 +54,7 @@ def simplifyDebt(ts):
                 if ts[0][0] == ts[i][0] and ts[0][1] == ts[i][1]:
                     ts[0][2] = ts[0][2] + ts[i][2]
                     ts = ts[:i] + ts[i+1:]
+                    # print("meow", ts)
                     cut = True
                     break
 
@@ -79,14 +93,19 @@ def simplifyDebt(ts):
                     # print('sd', ts)
                     break
 
+        
+            # print("==>", i, ts)
 
-                ts = [ts[-1]] + ts[0:-1]
-                # print("re", ts)
-                reattempt += 1
+        if not cut:
+            # print("rre", ts)
+            ts = [ts[-1]] + ts[0:-1]
+            # print("re", ts)
+            reattempt += 1
+
         if len(ts) is 1:
             break
 
-        if cut is True or reattempt <= len(ts) +1:
+        if cut is True or reattempt <= len(ts) + 1:
             continue
         else:
             # print('called')
